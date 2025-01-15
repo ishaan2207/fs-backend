@@ -25,6 +25,29 @@ const usersMock = [
     },
 ];
 
+const productsMock = [
+    {
+        id: 1,
+        name: 'Product 1',
+        price: '500',
+    },
+    {
+        id: 2,
+        name: 'Product 2',
+        price: '250',
+    },
+    {
+        id: 3,
+        name: 'Product 3',
+        price: '120',
+    },
+    {
+        id: 4,
+        name: 'Product 4',
+        price: '600',
+    },
+]
+
 const fetchAllUsers = async (req, res) => {
     try {
         res.status(200).json(usersMock);
@@ -34,4 +57,13 @@ const fetchAllUsers = async (req, res) => {
     }
 }
 
-module.exports = { fetchAllUsers };
+const fetchAllProducts = async (req, res) => {
+    try {
+        res.status(200).json(productsMock);
+    } catch (err) {
+        console.log('Fetching products resulted in error: ', err);
+        res.status(500).json({ error: 'Error in fetching products' });
+    }
+}
+
+module.exports = { fetchAllUsers, fetchAllProducts };
