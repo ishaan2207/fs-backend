@@ -3,33 +3,21 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema(
     {
         id: {
-            type: Number,
-            required: true
-        },
-        postedBy: {
             type: String,
             required: true
+        },
+        image: {
+            type: String,
+            required: false
         },
         content: {
             type: String,
             required: true
         },
-        datePosted: {
-            type: Data,
+        createdAt: {
+            type: Date,
             default: Date.now
         },
-        likes: {
-            type: Number,
-            required: true
-        },
-        comments: {
-            type: Number,
-            required: true
-        },
-        shares: {
-            type: Number,
-            required: true
-        }
     }
 )
 
