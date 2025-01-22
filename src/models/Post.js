@@ -1,25 +1,46 @@
 const mongoose = require('mongoose');
 
-const postSchema = new mongoose.Schema(
-    {
-        id: {
-            type: String,
-            required: true
-        },
-        image: {
-            type: String,
-            required: false
-        },
-        content: {
-            type: String,
-            required: true
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now
-        },
+const postSchema = new mongoose.Schema({
+    postId: {
+        type: String,
+        required: true
+    },
+    postedBy: {
+        type: String,
+        required: true
+    },
+    postContent: {
+        type: String,
+        required: true
+    },
+    likes: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    comments: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    shares: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    image: {
+        type: String,
+        required: false
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    userId: {
+        type: String,
+        required: true
     }
-)
+});
 
 const Post = mongoose.model('Post', postSchema);
 
