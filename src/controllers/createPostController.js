@@ -2,15 +2,13 @@ const Post = require('../models/Post');
 
 const createPost = async (req, res) => {
     try {
+        const post = req.body;
+        console.log(post);
         const newPost = new Post({
-            postId: 1,
-            postedBy: "Ishaan Gupta",
-            postContent: "Excited to announce that I’ve joined ABC Corp as the new Director of Marketing. Looking forward to new challenges and growth!",
-            createdAt: "2024-12-01T10:00:00Z",
-            likes: 120,
-            comments: 45,
-            shares: 18,
-            userId: 1
+            postId: post.postId,
+            postedBy: post.postedBy,
+            postContent: post.postContent,
+            userId: post.userId,
         });
 
         await newPost.save();
