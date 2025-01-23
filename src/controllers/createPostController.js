@@ -3,7 +3,6 @@ const Post = require('../models/Post');
 const createPost = async (req, res) => {
     try {
         const post = req.body;
-        console.log(post);
         const newPost = new Post({
             postId: post.postId,
             postedBy: post.postedBy,
