@@ -18,6 +18,11 @@ const postSchema = new mongoose.Schema({
         required: false,
         default: 0
     },
+    likedByUser: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
     comments: {
         type: Number,
         required: false,

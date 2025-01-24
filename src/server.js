@@ -7,6 +7,8 @@ const fetchRoutes = require('./routes/fetchPost');
 const deleteRoutes = require('./routes/deletePost');
 const updateRoutes = require('./routes/updatePost');
 
+const fetchTrendingRoute = require('./routes/fetchHome');
+
 const app = express();
 const PORT = 9999;
 
@@ -31,6 +33,8 @@ app.use('/create-post', createRoutes);
 app.use('/fetch-posts', fetchRoutes);
 app.use('/delete-post', deleteRoutes);
 app.use('/update-post', updateRoutes);
+
+app.use('/fetch-trending', fetchTrendingRoute);
 
 app.listen(PORT, () => {
     console.log('Listening on port ', PORT);
