@@ -3,9 +3,9 @@ const Post = require('../models/Post');
 const updatePost = async (req, res) => {
     const { id } = req.params;
     try {
-        const post = await Post.findById(id);
+        const post = await Post.findOne({ postId: id });
 
-        post.content = req.body.content;
+        post.postContent = req.body.postContent;
 
         await post.save();
         res.status(200).json({ message: "Post updated successfully." });
