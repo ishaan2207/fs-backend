@@ -14,6 +14,8 @@ const updateNotifsRoute = require('./routes/updateNotification');
 
 const fetchJobsRoute = require('./routes/fetchJob');
 
+const fetchNetworkRoute = require('./routes/fetchNetwork');
+
 const app = express();
 const PORT = 9999;
 
@@ -45,6 +47,8 @@ app.use('/fetch-notifs', fetchNotifsRoute);
 app.use('/update-notifs', updateNotifsRoute);
 
 app.use('/fetch-jobs', fetchJobsRoute);
+
+app.use('/fetch-network', fetchNetworkRoute);
 
 app.listen(PORT, () => {
     console.log('Listening on port ', PORT);
