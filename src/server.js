@@ -11,6 +11,7 @@ const fetchTrendingRoute = require('./routes/fetchHome');
 
 const fetchNotifsRoute = require('./routes/fetchNotification');
 const updateNotifsRoute = require('./routes/updateNotification');
+const deleteNotifsRoute = require('./routes/deleteNotification');
 
 const fetchJobsRoute = require('./routes/fetchJob');
 
@@ -46,6 +47,7 @@ app.use('/fetch-trending', fetchTrendingRoute);
 
 app.use('/fetch-notifs', fetchNotifsRoute);
 app.use('/update-notifs', updateNotifsRoute);
+app.use('/delete-notifs', deleteNotifsRoute);
 
 app.use('/fetch-jobs', fetchJobsRoute);
 
