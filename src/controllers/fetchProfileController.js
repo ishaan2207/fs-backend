@@ -1,4 +1,5 @@
 const RecommendedProfile = require('../models/RecommendedProfile');
+const ProfileInformation = require('../models/ProfileInformation');
 
 const fetchRecommendedProfiles = async (req, res) => {
     try {
@@ -10,4 +11,14 @@ const fetchRecommendedProfiles = async (req, res) => {
     }
 }
 
-module.exports = fetchRecommendedProfiles;
+const fetchProfileInformation = async (req, res) => {
+    try {
+        const profileInformation = await ProfileInformation.find();
+        res.status(200).json(profileInformation);
+    } catch (err) {
+        console.error('Error in fetching profile information: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
+module.exports = { fetchRecommendedProfiles, fetchProfileInformation };
