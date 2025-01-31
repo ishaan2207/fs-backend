@@ -19,6 +19,7 @@ const fetchNetworkRoute = require('./routes/fetchNetwork');
 const deleteNetworkRoute = require('./routes/deleteNetwork');
 
 const fetchProfileRoute = require('./routes/fetchProfile');
+const createProfileRoute = require('./routes/createProfile');
 
 const app = express();
 const PORT = 9999;
@@ -57,6 +58,7 @@ app.use('/fetch-network', fetchNetworkRoute);
 app.use('/delete-network', deleteNetworkRoute);
 
 app.use('/fetch-profile', fetchProfileRoute);
+app.use('/create-profile', createProfileRoute);
 
 app.listen(PORT, () => {
     console.log('Listening on port ', PORT);
