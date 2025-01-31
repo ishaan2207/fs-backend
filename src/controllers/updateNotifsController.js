@@ -2,7 +2,6 @@ const Notifications = require('../models/Notification');
 
 const updateNotification = async (req, res) => {
     const { id } = req.params;
-    console.log(id);
     try {
         const notification = await Notifications.findById(id);
         notification.read = true;
