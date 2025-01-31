@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const profileInformationSchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: true,
+    },
     name: {
         type: String,
         required: true,
@@ -9,7 +13,7 @@ const profileInformationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    about: {
+    bio: {
         type: String,
         required: true,
     },
@@ -52,7 +56,11 @@ const profileInformationSchema = new mongoose.Schema({
     searchAppearances: {
         type: Number,
         required: true,
-    }
+    },
+    about: {
+        type: String,
+        required: true,
+    },
 });
 
 const ProfileInformation = mongoose.model('ProfileInformation', profileInformationSchema);
