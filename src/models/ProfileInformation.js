@@ -61,6 +61,10 @@ const profileInformationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    skills: {
+        type: Array,
+        required: true,
+    },
 });
 
 const ProfileInformation = mongoose.model('ProfileInformation', profileInformationSchema);
