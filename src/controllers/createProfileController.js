@@ -1,5 +1,6 @@
 const ProfileExperience = require('../models/ProfileExperience');
 const ProfileEducation = require('../models/ProfileEducation');
+const ProfileInformation = require('../models/ProfileInformation');
 
 const createProfileExperience = async (req, res) => {
     try {
@@ -40,4 +41,22 @@ const createProfileEducation = async (req, res) => {
     }
 }
 
-module.exports = { createProfileExperience, createProfileEducation };
+const createProfileSkill = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { skill, image, learntFrom } = req.body;
+
+        const updatedProfile = await ProfileInformation.findByIdAndUpdate(
+            id,
+            { $push: { skills: { skill, image, learntFrom } } },
+            { new: true, runValidators: true }
+        );
+
+        res.status(200).json({ message: 'Skill successfully added.', updatedProfile });
+    } catch (err) {
+        console.error('Error in creating new profile skill: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
+module.exports = { createProfileExperience, createProfileEducation, createProfileSkill };
