@@ -8,6 +8,7 @@ const profileEducationSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
+        default: 'https://t3.ftcdn.net/jpg/04/91/76/62/360_F_491766294_h4j7LbW2YgfbNHhq7F8GboIc1XyBSEY5.jpg',
     },
     location: {
         type: String,

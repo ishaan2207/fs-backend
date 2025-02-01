@@ -1,4 +1,5 @@
 const ProfileExperience = require('../models/ProfileExperience');
+const ProfileEducation = require('../models/ProfileEducation');
 
 const createProfileExperience = async (req, res) => {
     try {
@@ -21,4 +22,22 @@ const createProfileExperience = async (req, res) => {
     }
 };
 
-module.exports = { createProfileExperience };
+const createProfileEducation = async (req, res) => {
+    try {
+        const education = req.body;
+        const newEducation = new ProfileEducation({
+            userId: '1',
+            location: education.location,
+            field: education.field,
+            dates: education.dates
+        });
+
+        await newEducation.save();
+        res.status(200).json({ message: 'New education saved successfully.', newEducation });
+    } catch (err) {
+        console.error('Error in creating new profile education: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
+module.exports = { createProfileExperience, createProfileEducation };
