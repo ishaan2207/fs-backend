@@ -1,3 +1,4 @@
+const ProfileEducation = require('../models/ProfileEducation');
 const ProfileInformation = require('../models/ProfileInformation');
 
 const updateProfileAbout = async (req, res) => {
@@ -32,6 +33,23 @@ const updateProfileInfo = async (req, res) => {
     }
 }
 
+const updateProfileEducation = async (req, res) => {
+    const { id } = req.params;
+    const { image, location, field, dates } = req.body;
+    try {
+        await ProfileEducation.findByIdAndUpdate(id, {
+            image: image,
+            location: location,
+            field: field,
+            dates: dates,
+        });
+        res.status(200).json({ message: 'Successfully updated profile education.' });
+    } catch (err) {
+        console.error('Error in updating profile education: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
 const updateProfileSkill = async (req, res) => {
     const { _id } = req.params;
     const { skillId, skill, image, learntFrom } = req.body;
@@ -57,4 +75,4 @@ const updateProfileSkill = async (req, res) => {
     }
 }
 
-module.exports = { updateProfileAbout, updateProfileInfo, updateProfileSkill };
+module.exports = { updateProfileAbout, updateProfileInfo, updateProfileEducation, updateProfileSkill };
