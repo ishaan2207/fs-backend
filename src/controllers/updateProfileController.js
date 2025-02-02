@@ -32,4 +32,29 @@ const updateProfileInfo = async (req, res) => {
     }
 }
 
-module.exports = { updateProfileAbout, updateProfileInfo };
+const updateProfileSkill = async (req, res) => {
+    const { _id } = req.params;
+    const { skillId, skill, image, learntFrom } = req.body;
+    const updatedSkill = {
+        id: skillId,
+        skill: skill,
+        image: image,
+        learntFrom: learntFrom,
+    };
+    try {
+        const result = await ProfileInformation.updateOne(
+            { _id: _id, 'skills.id': skillId },
+            {
+                $set: {
+                    'skills.$': updatedSkill
+                }
+            }
+        );
+        res.status(200).json({ message: 'Successfully update profile skill.', result });
+    } catch (err) {
+        console.error('Error in updating profile skill: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
+module.exports = { updateProfileAbout, updateProfileInfo, updateProfileSkill };
