@@ -14,8 +14,9 @@ const fetchRecommendedProfiles = async (req, res) => {
 };
 
 const fetchProfileInformation = async (req, res) => {
+    const {id} = req.params;
     try {
-        const profileInformation = await ProfileInformation.find();
+        const profileInformation = await ProfileInformation.findOne({userId: id});
         res.status(200).json(profileInformation);
     } catch (err) {
         console.error('Error in fetching profile information: ', err);

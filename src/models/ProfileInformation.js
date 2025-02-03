@@ -11,7 +11,7 @@ const profileInformationSchema = new mongoose.Schema({
     },
     pronouns: {
         type: String,
-        required: true,
+        required: false,
     },
     bio: {
         type: String,
@@ -19,7 +19,7 @@ const profileInformationSchema = new mongoose.Schema({
     },
     location: {
         type: String,
-        required: true,
+        required: false,
     },
     image: {
         type: String,
@@ -27,43 +27,43 @@ const profileInformationSchema = new mongoose.Schema({
     },
     universityImg: {
         type: String,
-        required: true,
+        required: false,
     },
     bannerImg: {
         type: String,
-        required: true,
+        required: false,
     },
     contactInfo: {
         type: String,
-        required: true,
+        required: false,
     },
     numConnections: {
         type: String,
-        required: true,
+        required: false,
     },
     universityName: {
         type: String,
-        required: true,
+        required: false,
     },
     profileViews: {
         type: Number,
-        required: true,
+        required: false,
     },
     postImpressions: {
         type: Number,
-        required: true,
+        required: false,
     },
     searchAppearances: {
         type: Number,
-        required: true,
+        required: false,
     },
     about: {
         type: String,
-        required: true,
+        required: false,
     },
     skills: {
         type: Array,
-        required: true,
+        required: false,
     },
 });
 
