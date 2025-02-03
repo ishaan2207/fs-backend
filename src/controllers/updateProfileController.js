@@ -1,4 +1,5 @@
 const ProfileEducation = require('../models/ProfileEducation');
+const ProfileExperience = require('../models/ProfileExperience');
 const ProfileInformation = require('../models/ProfileInformation');
 
 const updateProfileAbout = async (req, res) => {
@@ -29,6 +30,26 @@ const updateProfileInfo = async (req, res) => {
         res.status(200).json({ message: 'Successfully updated profile information.' })
     } catch (err) {
         console.error('Error in updating profile about: ', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+}
+
+const updateProfileExperience = async (req, res) => {
+    const { id } = req.params;
+    const { title, company, companyImage, location, startDate, endDate, descriptions } = req.body;
+    try {
+        await ProfileExperience.findByIdAndUpdate(id, {
+            title: title,
+            company: company,
+            companyImage: companyImage,
+            location: location,
+            startDate: startDate,
+            endDate: endDate,
+            descriptions: descriptions,
+        });
+        res.status(200).json({ message: 'Successfully updated profile experience.' });
+    } catch (err) {
+        console.error('Error in updating profile experience: ', err);
         res.status(500).json({ error: 'Internal server error.' });
     }
 }
@@ -75,4 +96,4 @@ const updateProfileSkill = async (req, res) => {
     }
 }
 
-module.exports = { updateProfileAbout, updateProfileInfo, updateProfileEducation, updateProfileSkill };
+module.exports = { updateProfileAbout, updateProfileInfo, updateProfileExperience, updateProfileEducation, updateProfileSkill };
