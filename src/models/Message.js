@@ -6,11 +6,11 @@ const messageSchema = new mongoose.Schema({
         required: true,
     }, 
     user1: {
-        type: String,
+        type: Object,
         required: true,
     },
     user2: {
-        type: String,
+        type: Object,
         required: true,
     },
 })
