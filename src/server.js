@@ -23,6 +23,7 @@ const createProfileRoute = require('./routes/createProfile');
 const updateProfileRoute = require('./routes/updateProfile');
 
 const fetchMessageRoute = require('./routes/fetchMessage');
+const updateMessageRoute = require('./routes/updateMessage');
 
 const app = express();
 const PORT = 9999;
@@ -65,6 +66,7 @@ app.use('/create-profile', createProfileRoute);
 app.use('/update-profile', updateProfileRoute);
 
 app.use('/fetch-message', fetchMessageRoute);
+app.use('/update-message', updateMessageRoute);
 
 app.listen(PORT, () => {
     console.log('Listening on port ', PORT);
