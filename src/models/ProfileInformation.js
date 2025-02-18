@@ -32,7 +32,7 @@ const profileInformationSchema = new mongoose.Schema({
     bannerImg: {
         type: String,
         required: false,
-        default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVO4NTgozMqDIV_y1ocNZh86IVhYPVsII76Q&s',
+        default: 'https://t4.ftcdn.net/jpg/04/95/28/65/360_F_495286577_rpsT2Shmr6g81hOhGXALhxWOfx1vOQBa.jpg',
     },
     contactInfo: {
         type: String,
