@@ -49,14 +49,17 @@ const profileInformationSchema = new mongoose.Schema({
     profileViews: {
         type: Number,
         required: false,
+        default: 0,
     },
     postImpressions: {
         type: Number,
         required: false,
+        default: 0,
     },
     searchAppearances: {
         type: Number,
         required: false,
+        default: 0,
     },
     about: {
         type: String,
