@@ -32,7 +32,7 @@ const createProfileInformationRoute = require('./routes/createProfileInformation
 const app = express();
 const PORT = 9999;
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = 'mongodb+srv://ishaangupta02:w4X40GBeJ62Ik1Nn@linkedinbackend.nfhb4.mongodb.net/?retryWrites=true&w=majority&appName=LinkedinBackend';
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
