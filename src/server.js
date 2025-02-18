@@ -45,7 +45,7 @@ mongoose.connect(MONGODB_URI, {
     });
 
 // middlewares
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // routes
