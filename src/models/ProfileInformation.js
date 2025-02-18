@@ -12,14 +12,17 @@ const profileInformationSchema = new mongoose.Schema({
     pronouns: {
         type: String,
         required: false,
+        default: '',
     },
     bio: {
         type: String,
         required: true,
+        default: '',
     },
     location: {
         type: String,
         required: false,
+        default: '',
     },
     image: {
         type: String,
@@ -28,6 +31,7 @@ const profileInformationSchema = new mongoose.Schema({
     universityImg: {
         type: String,
         required: false,
+        default: 'https://t3.ftcdn.net/jpg/04/91/76/62/360_F_491766294_h4j7LbW2YgfbNHhq7F8GboIc1XyBSEY5.jpg',
     },
     bannerImg: {
         type: String,
@@ -37,14 +41,17 @@ const profileInformationSchema = new mongoose.Schema({
     contactInfo: {
         type: String,
         required: false,
+        default: 'Contact Info'
     },
     numConnections: {
         type: String,
         required: false,
+        default: '0 connections'
     },
     universityName: {
         type: String,
         required: false,
+        default: '',
     },
     profileViews: {
         type: Number,
@@ -64,10 +71,12 @@ const profileInformationSchema = new mongoose.Schema({
     about: {
         type: String,
         required: false,
+        default: '',
     },
     skills: {
         type: Array,
         required: false,
+        default: [],
     },
 });
 
