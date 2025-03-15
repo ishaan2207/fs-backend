@@ -31,7 +31,7 @@ const profileInformationSchema = new mongoose.Schema({
     universityImg: {
         type: String,
         required: false,
-        default: 'https://t3.ftcdn.net/jpg/04/91/76/62/360_F_491766294_h4j7LbW2YgfbNHhq7F8GboIc1XyBSEY5.jpg',
+        default: 'https://img.freepik.com/premium-vector/university-academy-school-course-logo-design-template_6711-7546.jpg',
     },
     bannerImg: {
         type: String,
